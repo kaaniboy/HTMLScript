@@ -1,42 +1,23 @@
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Node;
 
 
 public class Parser {
-	private static final String FILE_LOCATION = "C://Users//Student//Desktop//HTMLScript//input.txt";
-	private static String input = "";
-	
-	public static void main(String[] args) {
-		loadInputCode();
+	public static String parseFunction(Node n) {
+		String name = n.attr("name");
 		
-		Document code = Jsoup.parse(input);
-		
-		Node main = code.select("code").get(0);
-		for(Node n : main.childNodes()) {
-			System.out.println(n.toString());
-			System.out.println();
-		}
-		
-		
+		return String.format("function %s(){\n%s\n}", name, Main.parseChildren(n));
 	}
 	
-	public static void loadInputCode() {
-		try {
-			BufferedReader reader = new BufferedReader(new FileReader(FILE_LOCATION));
-			
-			String line = null;
-			while((line = reader.readLine()) != null) {
-				input += line;
-			}
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+	public static String parseIf(Node n) {
+		String condition = n.attr("condition");
 
+		return String.format("if(%s) {\n%s\n}\n", condition, Main.parseChildren(n));
+	}
+	
+	public static String ParseVarDeclaration(Node n) {
+		String name = n.attr("name");
+		String value = n.attr("value");
+		
+		return String.format("var %s = %s\n", name, value);
+	}
 }

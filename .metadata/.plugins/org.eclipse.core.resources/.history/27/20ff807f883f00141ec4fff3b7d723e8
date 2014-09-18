@@ -1,0 +1,15 @@
+import org.jsoup.nodes.Node;
+
+
+public class Parser {
+	public static String parseFunction(Node n) {
+		return "function " + n.attr("name") + "() { }" + "\n";
+	}
+	
+	public static String parseIf(Node n) {
+		String condition = n.attr("condition");
+		String body = Main.parseStructure(n.)
+
+		return String.format("if(%s) {}\n", condition);
+	}
+}

@@ -1,0 +1,8 @@
+import org.jsoup.nodes.Node;
+
+
+public class Parser {
+	public static String parseFunction(Node n) {
+		return output += "function " + n.attr("name") + "() { }" + "\n";
+	}
+}

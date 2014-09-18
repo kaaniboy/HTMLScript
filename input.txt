@@ -1,5 +1,9 @@
 <code>
+	<var name="test" value="0"></var>
+
 	<function name="main">
-		
+		<if condition="x == 1">
+
+		</if>
 	</function>
 </code>
