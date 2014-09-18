@@ -1,0 +1,8 @@
+
+public class Parser {
+	private static final FILE_LOCATION = "...";
+	public static void main(String[] args) {
+		
+	}
+
+}

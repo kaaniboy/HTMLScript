@@ -1,0 +1,5 @@
+<code>
+	<function name="main">
+		
+	</function>
+</code>
