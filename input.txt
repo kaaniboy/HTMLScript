@@ -1,9 +1,15 @@
 <code>
-	<var name="test" value="0"></var>
+	<var name="test" value="0"/>
 
 	<function name="main">
-		<if condition="x == 1">
-
+		<if condition="test == 1">
+			<print params="test"/>
 		</if>
+		<elseif condition="test == 2">
+
+		</elseif>
 	</function>
+
+	<invoke name="main"/>
+
 </code>

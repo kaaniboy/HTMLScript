@@ -17,7 +17,7 @@ public class Parser {
 	public static String parseElseIf(Node n) {
 		String condition = n.attr("condition");
 		
-		return String.format("else if(%s) {\n%s\n}\n", condition, Main.parseChildren(n));
+		return String.format("if(%s) {\n%s\n}\n", condition, Main.parseChildren(n));
 	}
 	
 	public static String ParseVarDeclaration(Node n) {

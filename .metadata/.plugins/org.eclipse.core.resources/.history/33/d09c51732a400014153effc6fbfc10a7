@@ -51,8 +51,8 @@ public class Main {
 		} else if (structure.equals("if")) {
 			return Parser.parseIf(n);
 		} else if (structure.equals("elseif")) {
-			return Parser.parseElseIf(n);
-		} else if(structure.equals("var")) {
+			else if(structure.equals("var")) {
+		}
 			return Parser.ParseVarDeclaration(n);
 		} else if(structure.equals("invoke")) {
 			return Parser.ParseInvocation(n);
